@@ -20,10 +20,9 @@ const Login = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const supabase = createClient()
-      const { data } = await supabase.from('tb_users').select()
+      const { data } = await createClient().from('tb_users').select()
       setTodos(data || [])
-      
+
     }
     fetchData()
   }, [])
